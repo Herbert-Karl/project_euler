@@ -12,6 +12,7 @@ fn main() {
     println!("The sum of all even fibonacci numbers till the {}th smaller 4 mil, is {}", 100, even_fibonacci_numbers(100));
     println!("The largest prime factor of {}, is {}", 600851475143 as u128, largest_prime_factor(600851475143 ));
     println!("The largest palindorme product of two {}-digit factors, is {}", 3, largest_palindrome_product(3));
+    println!("The smallest integer divisible by numbers 1 to {}, is {}", 20, smallest_multiple(20));
 }
 
 /// problem 1
@@ -52,4 +53,19 @@ fn largest_palindrome_product(n: u32) -> u128 {
         }
     }
     largest
+}
+
+/// problem 5
+///
+/// smallest positive number, that is evenly divisible by numbers 1 to N
+fn smallest_multiple(n: u128) -> u128 {
+    let mut num = n;
+    while num<=(1..n+1).into_iter().product() {
+        if (1..n+1).into_iter().all(|x| num%x==0) {
+            break;
+        } else {
+            num = num+1;
+        }
+    }
+    num
 }

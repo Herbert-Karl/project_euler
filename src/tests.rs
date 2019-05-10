@@ -15,3 +15,8 @@ fn problem_3_t00() {
 fn is_palindrome_t00() {
     assert!(is_palindrome(9009));
 }
+
+#[test]
+fn problem_4_t00() {
+    assert_eq!(2520, smallest_multiple(10));
+}
