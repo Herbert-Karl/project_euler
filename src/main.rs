@@ -11,6 +11,7 @@ fn main() {
     println!("Multiples of three and five for n = {}, is {}", 1000, multiples_of_three_and_five(1000));
     println!("The sum of all even fibonacci numbers till the {}th smaller 4 mil, is {}", 100, even_fibonacci_numbers(100));
     println!("The largest prime factor of {}, is {}", 600851475143 as u128, largest_prime_factor(600851475143 ));
+    println!("The largest palindorme product of two {}-digit factors, is {}", 3, largest_palindrome_product(3));
 }
 
 /// problem 1
@@ -35,4 +36,20 @@ fn even_fibonacci_numbers(n: u128) -> u128 {
 fn largest_prime_factor(n: u128) -> u128 {
     let mut list: Vec<u128> = (2..integer_sqrt(n)).into_iter().filter(|&x| n%x==0 && is_prime(x)).collect();
     list.pop().unwrap_or_else(|| {println!("No prime factors exist for {}! Returning zero.", n); 0})
+}
+
+/// problem 4
+///
+/// largest palindrome product of two n-digit numbers
+fn largest_palindrome_product(n: u32) -> u128 {
+    let mut largest: u128 = 0;
+    for i in 10_u128.pow(n-1)..10_u128.pow(n) {
+        for j in 10_u128.pow(n-1)..10_u128.pow(n) {
+            let product: u128 = i*j;
+            if is_palindrome(product) && product>largest {
+                largest = product;
+            }
+        }
+    }
+    largest
 }

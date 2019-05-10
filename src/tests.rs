@@ -11,6 +11,7 @@ fn problem_3_t00() {
 }
 
 #[test]
+// the problem gives '9009' as an example for a palindrome
 fn is_palindrome_t00() {
     assert!(is_palindrome(9009));
 }
