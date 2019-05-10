@@ -29,3 +29,9 @@ pub fn is_prime(x: u128) -> bool {
         true
     }
 }
+
+pub fn is_palindrome(n: u128) -> bool {
+    let original = n.to_string();
+    let reverse = original.chars().rev().collect::<String>();   // reversing through use of a iterator of the chars of the string
+    original.eq(&reverse)
+}
