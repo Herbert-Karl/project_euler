@@ -8,6 +8,7 @@ fn main() {
     println!("Welcome to \"Solving Projecc Euler\"!");
     println!("Multiples of three and five for n = {}, is {}", 1000, multiples_of_three_and_five(1000));
     println!("The sum of all even fibonacci numbers till the {}th smaller 4 mil, is {}", 100, even_fibonacci_numbers(100));
+    println!("The largest prime factor of {}, is {}", 600851475143 as u128, largest_prime_factor(600851475143 ));
 }
 
 /// problem 1
@@ -23,4 +24,13 @@ fn multiples_of_three_and_five(n: u64) -> u64 {
 fn even_fibonacci_numbers(n: u128) -> u128 {
     // because i dont know, till which fibonacci number, they are smaller 4 mil, i just create a big enough range to iterate over
     (0..n).into_iter().map(|x| fibonacci(x)).filter(|&x| x<4_000_000 && x%2==0).sum()
+}
+
+
+/// problem 3
+///
+/// largest prime factor of given number N
+fn largest_prime_factor(n: u128) -> u128 {
+    let mut list: Vec<u128> = (2..integer_sqrt(n)).into_iter().filter(|&x| n%x==0 && is_prime(x)).collect();
+    list.pop().unwrap_or_else(|| {println!("No prime factors exist for {}! Returning zero.", n); 0})
 }
