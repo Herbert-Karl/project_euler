@@ -11,7 +11,7 @@ fn problem_3_t00() {
 }
 
 #[test]
-// the problem gives '9009' as an example for a palindrome
+/// the problem gives '9009' as an example for a palindrome
 fn is_palindrome_t00() {
     assert!(is_palindrome(9009));
 }
@@ -19,4 +19,10 @@ fn is_palindrome_t00() {
 #[test]
 fn problem_4_t00() {
     assert_eq!(2520, smallest_multiple(10));
+}
+
+#[test]
+/// the problem gives for 10 the example 3025-385 = 2640
+fn problem_6_t00() {
+    assert_eq!(2640, sum_square_difference(10));
 }

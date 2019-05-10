@@ -13,6 +13,7 @@ fn main() {
     println!("The largest prime factor of {}, is {}", 600851475143 as u128, largest_prime_factor(600851475143 ));
     println!("The largest palindorme product of two {}-digit factors, is {}", 3, largest_palindrome_product(3));
     println!("The smallest integer divisible by numbers 1 to {}, is {}", 20, smallest_multiple(20));
+    println!("The difference between sum of squares and square of summes for 1 to {}, is {}", 100, sum_square_difference(100));
 }
 
 /// problem 1
@@ -68,4 +69,14 @@ fn smallest_multiple(n: u128) -> u128 {
         }
     }
     num
+}
+
+
+/// problem 6
+///
+/// difference between the sum of the squares of the natural numbers till N and the square of the sum of the natural numbers till N
+fn sum_square_difference(n: u128) -> u128 {
+    let sum_squares = (1..n+1).into_iter().map(|x| x.pow(2)).sum::<u128>();
+    let square_sum = (1..n+1).into_iter().sum::<u128>().pow(2);
+    square_sum-sum_squares
 }
