@@ -1,6 +1,8 @@
 //! for solving the problems from project euler <https://projecteuler.net/>
 
 mod common;
+#[cfg(test)]
+mod tests;
 
 use crate::common::*;
 
