@@ -14,6 +14,7 @@ fn main() {
     println!("The largest palindorme product of two {}-digit factors, is {}", 3, largest_palindrome_product(3));
     println!("The smallest integer divisible by numbers 1 to {}, is {}", 20, smallest_multiple(20));
     println!("The difference between sum of squares and square of summes for 1 to {}, is {}", 100, sum_square_difference(100));
+    println!("The 10001st prime is {}", nth_prime(10001));
 }
 
 /// problem 1
@@ -79,4 +80,18 @@ fn sum_square_difference(n: u128) -> u128 {
     let sum_squares = (1..n+1).into_iter().map(|x| x.pow(2)).sum::<u128>();
     let square_sum = (1..n+1).into_iter().sum::<u128>().pow(2);
     square_sum-sum_squares
+}
+
+/// problem 7
+///
+/// calculates and returns the Nth prime number
+fn nth_prime(n: u128) -> u128 {
+    let mut x: (u128, u128) = (1, 2);
+    while x.0<n {
+        x.1 = x.1+1;
+        if is_prime(x.1) {
+            x.0 = x.0+1;
+        }
+    }
+    x.1
 }

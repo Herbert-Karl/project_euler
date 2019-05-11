@@ -26,3 +26,9 @@ fn problem_4_t00() {
 fn problem_6_t00() {
     assert_eq!(2640, sum_square_difference(10));
 }
+
+#[test]
+/// the problem states the 6th prime as 13
+fn problem_7_t00() {
+    assert_eq!(13, nth_prime(6));
+}
