@@ -16,6 +16,7 @@ fn main() {
     println!("The difference between sum of squares and square of summes for 1 to {}, is {}", 100, sum_square_difference(100));
     println!("The 10001st prime is {}", nth_prime(10001));
     println!("The largest product in a series for the hardcoded number for {} digits is {:?}", 13, largest_product_in_a_series(13));
+    //println!("The special pythagorean triplet with a+b+c=1000 is with product {:?}", special_pythagorean_triplet(1000));
 }
 
 /// problem 1
@@ -73,7 +74,6 @@ fn smallest_multiple(n: u128) -> u128 {
     num
 }
 
-
 /// problem 6
 ///
 /// difference between the sum of the squares of the natural numbers till N and the square of the sum of the natural numbers till N
@@ -114,4 +114,17 @@ fn largest_product_in_a_series(n: usize) -> (u128, Vec<u8>) {
         i = i+1;
     }
     output
+}
+
+/// problem 9
+///
+/// find the product of a triplet a, b, c for which
+/// * a+b+c=1000
+/// * a<b<c
+/// * a²+b²=c²
+fn special_pythagorean_triplet() -> ((u32, u32, u32), u32) {
+    unimplemented!();
+    let mut triplet: (u32, u32, u32) = (1, 2, 3);
+
+    (triplet, triplet.0*triplet.1*triplet.2)
 }
