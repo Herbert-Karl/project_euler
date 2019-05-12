@@ -12,9 +12,10 @@ fn main() {
     println!("The sum of all even fibonacci numbers till the {}th smaller 4 mil, is {}", 100, even_fibonacci_numbers(100));
     println!("The largest prime factor of {}, is {}", 600851475143 as u128, largest_prime_factor(600851475143 ));
     println!("The largest palindorme product of two {}-digit factors, is {}", 3, largest_palindrome_product(3));
-    println!("The smallest integer divisible by numbers 1 to {}, is {}", 20, smallest_multiple(20));
+    //println!("The smallest integer divisible by numbers 1 to {}, is {}", 20, smallest_multiple(20));
     println!("The difference between sum of squares and square of summes for 1 to {}, is {}", 100, sum_square_difference(100));
     println!("The 10001st prime is {}", nth_prime(10001));
+    println!("The largest product in a series for the hardcoded number for {} digits is {:?}", 13, largest_product_in_a_series(13));
 }
 
 /// problem 1
@@ -94,4 +95,23 @@ fn nth_prime(n: u128) -> u128 {
         }
     }
     x.1
+}
+
+/// problem 8
+///
+/// searches for the N adjacent digits in the 1000 digit number with the greatest product and returns digits+product
+fn largest_product_in_a_series(n: usize) -> (u128, Vec<u8>) {
+    let number = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
+    let mut i: usize = 0;
+    let mut output: (u128, Vec<u8>) = (0, Vec::new());
+    while i+n<number.len() {
+        let slice = number.get(i..i+n).expect("Indexing went wrong");
+        let product = slice.chars().map(|x| x.to_digit(10).expect("this is no digit!") as u128).product();
+        if product>output.0 {
+            output.1 = slice.chars().map(|x| x.to_digit(10).expect("this is no digit!") as u8).collect();
+            output.0 = product;
+        }
+        i = i+1;
+    }
+    output
 }

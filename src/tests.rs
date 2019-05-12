@@ -17,7 +17,8 @@ fn is_palindrome_t00() {
 }
 
 #[test]
-fn problem_4_t00() {
+/// example given by the text as '2520' for numbers 1 to 10
+fn problem_5_t00() {
     assert_eq!(2520, smallest_multiple(10));
 }
 
@@ -31,4 +32,10 @@ fn problem_6_t00() {
 /// the problem states the 6th prime as 13
 fn problem_7_t00() {
     assert_eq!(13, nth_prime(6));
+}
+
+#[test]
+/// example given by the problem for four digits
+fn problem_8_t00() {
+    assert_eq!((5832, vec!(9, 9, 8, 9)), largest_product_in_a_series(4));
 }
