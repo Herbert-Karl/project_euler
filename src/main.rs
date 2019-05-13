@@ -17,6 +17,7 @@ fn main() {
     println!("The 10001st prime is {}", nth_prime(10001));
     println!("The largest product in a series for the hardcoded number for {} digits is {:?}", 13, largest_product_in_a_series(13));
     //println!("The special pythagorean triplet with a+b+c=1000 is with product {:?}", special_pythagorean_triplet(1000));
+    println!("Sum of all primes lower than {} is {}.", 2_000_000, summation_of_primes(2_000_000));
 }
 
 /// problem 1
@@ -127,4 +128,11 @@ fn special_pythagorean_triplet() -> ((u32, u32, u32), u32) {
     let mut triplet: (u32, u32, u32) = (1, 2, 3);
 
     (triplet, triplet.0*triplet.1*triplet.2)
+}
+
+/// problem 10
+///
+/// sum of all primes lower than N
+fn summation_of_primes(n: u128) -> u128 {
+    (1..n).into_iter().filter(|&x| is_prime(x)).sum()
 }

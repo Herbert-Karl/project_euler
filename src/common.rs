@@ -15,6 +15,9 @@ pub fn integer_sqrt(x: u128) -> u128 {
 }
 
 pub fn is_prime(x: u128) -> bool {
+    if x==2 {
+        return true
+    }
     let help = integer_sqrt(x);
     if x<2 || x%2==0 {
         false

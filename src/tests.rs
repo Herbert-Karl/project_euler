@@ -39,3 +39,9 @@ fn problem_7_t00() {
 fn problem_8_t00() {
     assert_eq!((5832, vec!(9, 9, 8, 9)), largest_product_in_a_series(4));
 }
+
+#[test]
+// example given by the problem for n=10
+fn problem_10_t00() {
+    assert_eq!(17, summation_of_primes(10));
+}
