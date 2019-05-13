@@ -41,7 +41,13 @@ fn problem_8_t00() {
 }
 
 #[test]
-// example given by the problem for n=10
+/// example given by the problem for n=10
 fn problem_10_t00() {
     assert_eq!(17, summation_of_primes(10));
+}
+
+#[test]
+/// example given by the problem for over five divisors
+fn problem_12_t00() {
+    assert_eq!(28, highly_divisible_triangle_number(5));
 }
