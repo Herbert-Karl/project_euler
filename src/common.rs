@@ -47,6 +47,9 @@ pub fn is_palindrome(n: u128) -> bool {
 ///
 /// the sequence does contain n and 1
 pub fn collatz_sequence(n: u64) -> Vec<u64> {
+    if n==0 {
+        return Vec::new()
+    }
     let mut sequence = vec!(n);
     let mut i = n;
     while i!=1 {

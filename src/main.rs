@@ -19,6 +19,7 @@ fn main() {
     //println!("The special pythagorean triplet with a+b+c=1000 is with product {:?}", special_pythagorean_triplet(1000));
     println!("Sum of all primes lower than {} is {}.", 2_000_000, summation_of_primes(2_000_000));
     println!("The first triangle number to have over {} divisors is {}.", 500, highly_divisible_triangle_number(500));
+    println!("The longest collatz sequence for positive integers smaller {} has {} ", 1_000_000, longest_collatz_sequence(1_000_000));
 }
 
 /// problem 1
@@ -157,4 +158,18 @@ fn highly_divisible_triangle_number(n: u32) -> u128 {
         i = i+1;
     }
     (1..i).into_iter().sum()
+}
+
+/// problem 14
+///
+/// computes number between 1 and N with the longest collatz sequence
+fn longest_collatz_sequence(n: u64) -> u64 {
+    let mut num = (1, 1);   // first number, second length of sequence
+    for i in 1..n {
+        let k = collatz_sequence(i);
+        if k.len()>num.1 {
+            num = (i, k.len());
+        }
+    }
+    num.0
 }
