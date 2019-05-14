@@ -20,6 +20,7 @@ fn main() {
     println!("Sum of all primes lower than {} is {}.", 2_000_000, summation_of_primes(2_000_000));
     println!("The first triangle number to have over {} divisors is {}.", 500, highly_divisible_triangle_number(500));
     println!("The longest collatz sequence for positive integers smaller {} has {} ", 1_000_000, longest_collatz_sequence(1_000_000));
+    //println!("The sum of the digits in {}! (factorial) is {}.", 100, factorial_digit_sum(100));
 }
 
 /// problem 1
@@ -172,4 +173,12 @@ fn longest_collatz_sequence(n: u64) -> u64 {
         }
     }
     num.0
+}
+
+/// problem 20
+///
+/// finds the sum of the digits for N! (factorial)
+fn factorial_digit_sum(n: u128) -> u128 {
+    let fac = factorial(n);
+    fac.to_string().chars().map(|x| x.to_digit(10).expect("this is no digit!") as u128).sum()
 }

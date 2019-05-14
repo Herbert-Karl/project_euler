@@ -11,7 +11,7 @@ fn problem_3_t00() {
 }
 
 #[test]
-/// the problem gives '9009' as an example for a palindrome
+/// the problem 4 gives '9009' as an example for a palindrome
 fn is_palindrome_t00() {
     assert!(is_palindrome(9009));
 }
@@ -72,4 +72,10 @@ fn factorial_t01() {
 // example taken from problem 20
 fn factorial_t02() {
     assert_eq!(3628800, factorial(10));
+}
+
+#[test]
+// example given by problem 20
+fn problem_20_t00() {
+    assert_eq!(27, factorial_digit_sum(10));
 }
