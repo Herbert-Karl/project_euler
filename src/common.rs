@@ -62,3 +62,11 @@ pub fn collatz_sequence(n: u64) -> Vec<u64> {
     }
     sequence
 }
+
+pub fn factorial(n: u128) -> u128 {
+    if n==0 {
+        1
+    } else {
+        (1..n+1).into_iter().product()
+    }
+}

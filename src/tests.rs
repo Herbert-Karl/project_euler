@@ -57,3 +57,19 @@ fn problem_12_t00() {
 fn collatz_sequence_t00() {
     assert_eq!(vec!(13, 40, 20, 10, 5, 16, 8, 4, 2, 1), collatz_sequence(13));
 }
+
+#[test]
+fn factorial_t00() {
+    assert_eq!(1, factorial(0));
+}
+
+#[test]
+fn factorial_t01() {
+    assert_eq!(1, factorial(1));
+}
+
+#[test]
+// example taken from problem 20
+fn factorial_t02() {
+    assert_eq!(3628800, factorial(10));
+}
