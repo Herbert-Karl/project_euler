@@ -149,7 +149,7 @@ fn highly_divisible_triangle_number(n: u32) -> u128 {
     while d<=n {
         let number = (1..i+1).into_iter().sum();
         d = 0;
-        for k in (1..integer_sqrt(number)+1) {
+        for k in 1..integer_sqrt(number)+1 {
             if number%k==0 {
                 d = d+2;    // plus two in order to account for the found divisor and the complementary dividend, which is also a divisor of the number
             }

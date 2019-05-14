@@ -51,3 +51,9 @@ fn problem_10_t00() {
 fn problem_12_t00() {
     assert_eq!(28, highly_divisible_triangle_number(5));
 }
+
+#[test]
+/// example taken from problem 14
+fn collatz_sequence_t00() {
+    assert_eq!(vec!(13, 40, 20, 10, 5, 16, 8, 4, 2, 1), collatz_sequence(13));
+}
