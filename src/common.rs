@@ -77,7 +77,7 @@ pub fn factorial(n: u128) -> u128 {
 /// if no, it returns None
 pub fn amicable_pair(n: u128) -> Option<(u128, u128)> {
     let sum_proper_divisors = proper_divisors(n).into_iter().sum();
-    if n==proper_divisors(sum_proper_divisors).into_iter().sum() {
+    if n==proper_divisors(sum_proper_divisors).into_iter().sum() && n!=sum_proper_divisors {
         Some((n, sum_proper_divisors))
     } else {
         None

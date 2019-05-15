@@ -21,6 +21,7 @@ fn main() {
     println!("The first triangle number to have over {} divisors is {}.", 500, highly_divisible_triangle_number(500));
     println!("The longest collatz sequence for positive integers smaller {} has {} ", 1_000_000, longest_collatz_sequence(1_000_000));
     //println!("The sum of the digits in {}! (factorial) is {}.", 100, factorial_digit_sum(100));
+    println!("The sum of all amicable numbers below {} is {}", 10000, amicable_numbers(10000));
 }
 
 /// problem 1
@@ -181,4 +182,20 @@ fn longest_collatz_sequence(n: u64) -> u64 {
 fn factorial_digit_sum(n: u128) -> u128 {
     let fac = factorial(n);
     fac.to_string().chars().map(|x| x.to_digit(10).expect("this is no digit!") as u128).sum()
+}
+
+/// problem 21
+///
+/// computes the sum of all amicable numbers under N
+fn amicable_numbers(n: u128) -> u128 {
+    let mut amicable_nums = Vec::new();
+    for i in 1..n {
+        if let Some(pair) = amicable_pair(i) {
+            if pair.0<n && pair.1<n && !amicable_nums.contains(&pair.0) {
+                amicable_nums.push(pair.0);
+                amicable_nums.push(pair.1);
+            }
+        }
+    }
+    amicable_nums.into_iter().sum()
 }

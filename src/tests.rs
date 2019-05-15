@@ -101,3 +101,8 @@ fn proper_divisors_t01() {
 fn amicable_pair_t00() {
     assert_eq!(Some((220, 284)), amicable_pair(220));
 }
+
+#[test]
+fn amicable_pair_t01() {
+    assert_eq!(None, amicable_pair(1));
+}
