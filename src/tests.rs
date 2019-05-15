@@ -69,13 +69,35 @@ fn factorial_t01() {
 }
 
 #[test]
-// example taken from problem 20
+/// example taken from problem 20
 fn factorial_t02() {
     assert_eq!(3628800, factorial(10));
 }
 
 #[test]
-// example given by problem 20
+/// example given by problem 20
 fn problem_20_t00() {
     assert_eq!(27, factorial_digit_sum(10));
+}
+
+#[test]
+/// example taken from problem 21
+fn proper_divisors_t00() {
+    let mut dividers = proper_divisors(220);
+    dividers.sort();
+    assert_eq!(vec!(1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110), dividers);
+}
+
+#[test]
+/// example taken from problem 21
+fn proper_divisors_t01() {
+    let mut dividers = proper_divisors(284);
+    dividers.sort();
+    assert_eq!(vec!(1, 2, 4, 71, 142), dividers);
+}
+
+#[test]
+/// example taken from problem 21
+fn amicable_pair_t00() {
+    assert_eq!(Some((220, 284)), amicable_pair(220));
 }
