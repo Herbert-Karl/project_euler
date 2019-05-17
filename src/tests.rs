@@ -106,3 +106,9 @@ fn amicable_pair_t00() {
 fn amicable_pair_t01() {
     assert_eq!(None, amicable_pair(1));
 }
+
+#[test]
+/// example take from problem 41
+fn is_pandigital_t00() {
+    assert!(is_pandigital(2143));
+}

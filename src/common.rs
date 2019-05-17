@@ -95,3 +95,12 @@ pub fn proper_divisors(n: u128) -> Vec<u128> {
     }
     dividers
 }
+
+use std::collections::HashSet;
+
+/// checks if a k-digit number is pandigital, meaning it only contains the digits from 1 to k
+pub fn is_pandigital(n: u64) -> bool {
+    let num = n.to_string();
+    let digits: HashSet<u64> = (1..num.len() as u64+1).into_iter().collect();
+    num.chars().map(|x| x.to_digit(10).expect("this is no digit!")).all(|x| digits.contains(&(x as u64)))
+}
