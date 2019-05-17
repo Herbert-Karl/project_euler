@@ -108,7 +108,13 @@ fn amicable_pair_t01() {
 }
 
 #[test]
-/// example take from problem 41
+/// example taken from problem 41
 fn is_pandigital_t00() {
     assert!(is_pandigital(2143));
+}
+
+#[test]
+/// example found while debugging a bug
+fn is_pandigital_t01() {
+    assert_eq!(false, is_pandigital(4441));
 }
